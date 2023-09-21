@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open Bing Tabs</title>
+  <link rel="icon" href="http://www.bing.com/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      background-color: #f0f0f0; /* Background color for better visibility */
+    }
+
+    .button-container {
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 80%; /* Adjusted width for mobile screens */
+      max-width: 250px; /* Maximum width for larger screens */
+      height: 60px; /* Increased height */
+      font-size: 20px;
+      border: none;
+      color: #fff;
+      border-radius: 8px; /* Increased border radius */
+      cursor: pointer;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-4px); /* Increased hover transform */
+    }
+
+    .orange-button {
+      background: linear-gradient(to bottom, #ff7f50, #ff6347); /* Dull orange gradient */
+    }
+
+    .ocean-blue-button {
+      background: linear-gradient(to bottom, #0074e4, #00a2ff); /* Ocean blue gradient */
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <button class="orange-button" onclick="open50BingTabs()">Open 50 Bing tabs</button>
+  </div>
+
+  <div class="button-container">
+    <button class="ocean-blue-button" onclick="open15BingTabs()">Open 15 Bing tabs</button>
+  </div>
+
+  <script>
+    function open50BingTabs() {
+      // Create an array of 50 random search queries.
+      var queries = [];
+      for (var i = 0; i < 50; i++) {
+        queries.push(Math.random().toString(36).substring(7));
+      }
+
+      // Open each search query in a new tab.
+      for (var i = 0; i < queries.length; i++) {
+        window.open('https://www.bing.com/?q=' + queries[i], '_blank');
+      }
+    }
+
+    function open15BingTabs() {
+      // Create an array of 15 random search queries.
+      var queries = [];
+      for (var i = 0; i < 15; i++) {
+        queries.push(Math.random().toString(36).substring(7));
+      }
+
+      // Open each search query in a new tab.
+      for (var i = 0; i < queries.length; i++) {
+        window.open('https://www.bing.com/?q=' + queries[i], '_blank');
+      }
+    }
+  </script>
+</body>
+</html>
